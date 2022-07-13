@@ -1,0 +1,48 @@
+/* Links */
+a:hover {
+    color: #ffcf6e;
+}
+
+/* Header Buttons on Startpage */
+a.btn {
+    color: black;
+    background-color: #ffab00;
+}
+a.btn:hover {
+    background-color: #ff8400;
+}
+
+/* Scroll Menu on Startpage */
+a.fn-item {
+    color: #BBC7CC;
+}
+a.fn-item.active {
+    color: #ffab00;
+}
+a.fn-item:hover {
+    color: #ff8400;
+}
+
+/* Content / Sections */
+.post-holder.odd {
+    background: #22343A; /* B80135*/
+    color: #BBC7CC;
+}
+.post-holder {
+    background: #f2efe8;
+}
+body {
+    color: #3A4145;
+}
+
+/* Footer */
+.site-footer {
+    color: black;
+    background-color: #ffab00;
+}
+
+/* Contact icons */
+section.post-content i.fa {
+    text-align: right;
+    min-width: 1em;
+}
