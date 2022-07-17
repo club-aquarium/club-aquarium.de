@@ -22,4 +22,4 @@ Du willst mehr Details?
 Die Raumnutzungspauschale ist nach dem jeweiligen Umsatz gestaffelt. Das bedeutet:\
 *Je mehr Getränkeumsatz ihr generiert, desto niedriger wird die Raumnutzungspauschale*!
 
-**Interesse? Dann nutz bitte [dieses Formular](https://cloud.club-aquarium.de/apps/forms/6DqoMaewZSQyAFrW).**
+**Interesse? Dann nutz bitte [dieses Formular 📝](https://cloud.club-aquarium.de/apps/forms/6DqoMaewZSQyAFrW).**
