@@ -1,0 +1,16 @@
+{{ $events := sort (.Site.GetPage "/events").Pages "Date" }}
+
+{{ $number := default "5" (.Get 0) }}
+
+<div class="timeline">
+{{ range $i,$p := first $number $events }}
+    {{ $class := "timeline-left"}}
+    {{ if not (modBool $i 2)}}
+        {{ $class = "timeline-right"}}
+    {{ end }}
+
+    <div class="timeline-container {{$class}}">
+    {{ .Render "summary"}}
+    </div>
+{{end}}
+</div>

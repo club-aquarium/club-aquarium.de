@@ -25,8 +25,8 @@ a.fn-item:hover {
 
 /* Content / Sections */
 .post-holder.odd {
-    background: #22343A; /* B80135*/
-    color: #BBC7CC;
+    background: #B80135; /* 22343A*/
+    color: white; /*BBC7CC*/
 }
 .post-holder {
     background: #f2efe8;
@@ -40,9 +40,55 @@ body {
     color: black;
     background-color: #ffab00;
 }
+.site-footer a {
+    color: black;
+}
+.site-footer a:hover {
+    color: #323232;
+}
 
 /* Contact icons */
 section.post-content i.fa {
     text-align: right;
     min-width: 1em;
+}
+
+/* Allow the events section to be bigger */
+#events {
+    width: 95%;
+    max-width: none;
+}
+#events .post-header,
+#events .post-content>:not(.timeline) {
+    width: 76%;
+    max-width: 700px;
+    margin: 0rem auto;
+}
+
+ul {
+    padding-left: min(1em, 40px);
+}
+
+/* Styling of single events */
+.event-meta {
+    background-color: white;
+    color: black;
+    border: 2px solid #ffab00;
+    border-bottom: none;
+}
+
+.event-meta > div:not(.first) {
+    border: none;
+    border-bottom: #ffab00 2px solid;
+}
+.event-meta > div {
+    padding: 0.1em 1em;
+}
+.event-meta > div.first {
+    margin: 0;
+    background-color: #ffab00;
+    color: white;
+}
+.event-meta i.fa {
+    padding-right: 0.25em;
 }

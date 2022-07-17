@@ -1,0 +1,20 @@
+{{ $summary := split .Summary " "}}
+{{ $length := 12 }}
+
+{{ if gt (len $summary) $length }}
+{{ $summary = (first $length $summary | append "...") }}
+{{ end }}
+
+{{ $summary = delimit $summary " " }}
+
+<div class="timeline-wrapper">
+	<div class="timeline-head">
+		<div>{{ .Params.date | time.Format ":date_medium"}}
+		{{if isset .Params "time"}} - {{ .Params.time }}{{end}}</div>
+	</div>
+	<div class="timeline-content">
+		<h5>{{ .Title }}</h5>
+		<p>{{ $summary }}</p>	
+	</div>
+	<a class="timeline-link" href="{{ .RelPermalink }}">Zur Veranstaltung</a>
+</div>
