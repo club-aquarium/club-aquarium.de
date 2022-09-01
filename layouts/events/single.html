@@ -1,34 +1,69 @@
+{{define "additional_head"}}
+<style lang="css">
+	footer {
+		position: fixed!important;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	main {
+		display: table;
+		background-color: #ffffff;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+	}
+	article {
+		width: 70%;
+		padding: 2em;
+		background-color: #ffffff99;
+		border-radius: 1em;
+	}
+	.post-content, .post-title {
+		color: black;
+	}
+</style>
+{{end}}
+
 {{ define "main" }}
-<main class="content page-template page-{{ .Slug }}" role="main">
+<main class="content page-template page-{{ .Slug }}" role="main"
+{{ if isset .Params "image" }}
+	{{ with .Resources.GetMatch (.Param "image") }}
+	style="background-image: url({{ .RelPermalink }})"
+	{{ end }}
+{{ end }}
+	>
+	<div class="vertical">
 	<article class="post page">
-	<header class="post-header">
-		<a id="blog-logo" href="{{ "/" | relURL }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Zurück zur Webseite</a>
-	</header>
-	<h1 class="post-title">{{ .Title }}</h1>
-	<div class="event-meta">
-		<div class="first">Informationen</div>
-		<div>
-			<span>
-				<i class="fa fa-calendar" aria-hidden="true"></i> {{.Date | time.Format ":date_long" }},
-				<i class="fa fa-clock-o"></i> {{.Date | time.Format ":time_short"}}
-			</span>
-			{{ if .ExpiryDate }}
-			<span>
-				<i class="fa fa-long-arrow-right" style="padding: 0 1em;" aria-hidden="true"></i>
-				<i class="fa fa-calendar" aria-hidden="true"></i> {{.ExpiryDate | time.Format ":date_long" }},
-				<i class="fa fa-clock-o"></i> {{.ExpiryDate | time.Format ":time_short"}}
-			</span>
+		<header class="post-header">
+			<a id="blog-logo" href="{{ "/" | relURL }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Zurück zur Webseite</a>
+		</header>
+		<h1 class="post-title">{{ .Title }}</h1>
+		<div class="event-meta">
+			<div class="first">Informationen</div>
+			<div>
+				<span>
+					<i class="fa fa-calendar" aria-hidden="true"></i> {{.Date | time.Format ":date_long" }},
+					<i class="fa fa-clock-o"></i> {{.Date | time.Format ":time_short"}}
+				</span>
+				{{ if .ExpiryDate }}
+				<i class="fa fa-long-arrow-right" style="padding: 0 8%;" aria-hidden="true"></i>
+				<span style="white-space: nowrap;">
+					<i class="fa fa-calendar" aria-hidden="true"></i> {{.ExpiryDate | time.Format ":date_long" }},
+					<i class="fa fa-clock-o"></i> {{.ExpiryDate | time.Format ":time_short"}}
+				</span>
+				{{ end }}
+			</div>
+			{{ if isset .Params "location" }}
+			<div>
+				<i class="fa fa-location-arrow" aria-hidden="true"></i> {{ .Params.location }}
+			</div>
 			{{ end }}
 		</div>
-		{{ if isset .Params "location" }}
-		<div>
-			<i class="fa fa-location-arrow" aria-hidden="true"></i> {{ .Params.location }}
-		</div>
-		{{ end }}
-	</div>
-	<section class="post-content">
-		{{ .Content }}
-	</section>
+		<section class="post-content">
+			{{ .Content }}
+		</section>
 	</article>
+	</div>
 </main>
 {{ end }}
