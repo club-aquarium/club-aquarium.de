@@ -73,6 +73,7 @@ ul {
 .event-meta {
     background-color: white;
     color: black;
+    font-size: 16px;
     border: 2px solid #ffab00;
     border-bottom: none;
 }
