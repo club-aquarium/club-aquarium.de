@@ -1,2 +1,5 @@
+# From nextcloud
+content/
+# Never in the repo!
 public/
 .hugo_build.lock
