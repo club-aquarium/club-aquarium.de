@@ -121,10 +121,10 @@
 .timeline-right .timeline-link {
     left: 50%;
     text-align: right;
-    border-radius: 0px 0px 6px 0px;
+    border-radius: 6px 0px 6px 0px;
 }
 .timeline-left .timeline-link {
-    border-radius: 0px 0px 0px 6px;
+    border-radius: 0px 6px 0px 6px;
 }
 .timeline-content {
     display: block;
@@ -174,9 +174,9 @@
     }
 
     /* Always on right on mobile */
-    .timeline-link {
+    .timeline-left .timeline-link {
         left: 50%;
         text-align: right;
-        border-radius: 0px 0px 6px 0px;
+        border-radius: 6px 0px 6px 0px;
     }
 }
