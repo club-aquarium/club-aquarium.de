@@ -1,4 +1,4 @@
 [submodule "themes/hugo-scroll"]
 	path = themes/hugo-scroll
-	url = git@git.club-aquarium.de:technik/website_theme.git
+	url = ../website_theme.git
 # https://git.club-aquarium.de/technik/website_theme.git
