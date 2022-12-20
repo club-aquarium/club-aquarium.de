@@ -1,0 +1,3 @@
+<p id="map" class="unloaded"><button>Externe Inhalte für Kartenansicht laden</button></p>
+{{- $js := resources.Get "js/map.ts" | js.Build (dict "target" "es2015") -}}
+<script src="{{ $js.RelPermalink }}"></script>

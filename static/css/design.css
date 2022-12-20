@@ -93,3 +93,26 @@ ul {
 .event-meta i.fa {
     padding-right: 0.25em;
 }
+
+/* Map */
+#map {
+    min-height: 20em;
+    max-height: 100vw;
+    height: 60vh;
+}
+#map.unloaded {
+    position: relative;
+}
+#map.unloaded > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* colors from hugo-scroll theme */
+.post-holder #map.unloaded {
+    background: #b80135;
+}
+.post-holder:nth-child(odd) #map.unloaded {
+    background: #f2efe8;
+}
