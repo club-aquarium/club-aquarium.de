@@ -20,6 +20,9 @@ if(root) {
 			attribution: '<a href="https://osmand.net/">OsmAnd</a> | <a href="https://www.openstreetmap.org/">OSM</a>',
 		}).addTo(map)
 		map.setView(L.marker([51.0448464, 13.7401122]).addTo(map).getLatLng(), 15)
+
+		const flag = root.querySelector(".leaflet-attribution-flag")
+		flag?.parentNode?.removeChild(flag)
 	})
 
 	root.addEventListener("click", (_: unknown): void => {
