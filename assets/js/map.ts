@@ -25,7 +25,7 @@ if(root) {
 		flag?.parentNode?.removeChild(flag)
 	})
 
-	root.addEventListener("click", (_: unknown): void => {
+	root.firstElementChild?.addEventListener("click", (_: unknown): void => {
 		document.head.appendChild(leaflet_css)
 		document.head.appendChild(leaflet_js)
 	})
