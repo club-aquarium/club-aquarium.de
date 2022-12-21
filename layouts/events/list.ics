@@ -1,0 +1,8 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Hugo (gohugo.io) at {{ .Site.BaseURL }}
+METHOD:PUBLISH
+{{ range .Pages -}}
+{{ partial "vevent.ics" . -}}
+{{ end -}}
+END:VCALENDAR

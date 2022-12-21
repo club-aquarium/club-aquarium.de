@@ -3,6 +3,14 @@
 <!-- For our events -->
 <link rel="stylesheet" href='{{ "css/timeline.css" | absURL }}'>
 
+{{- if .IsHome -}}
+{{ with .OutputFormats.Get "RSS" -}}
+<link rel="alternate" type="application/rss+xml" title="RSS Feed der Veranstaltungen" href="{{ .RelPermalink }}" />
+{{ end -}}
+{{/* /events/index.ics does not belong to home so we cannot do it with .OutputFormats */ -}}
+<link rel="alternate" type="text/calendar" title="TODO" href="{{ "events/index.ics" | absURL }}" />
+{{ end -}}
+
 <link
   rel="apple-touch-icon"
   sizes="180x180"

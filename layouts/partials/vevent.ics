@@ -1,0 +1,21 @@
+BEGIN:VEVENT
+UID:{{ .Permalink | absURL }}
+SUMMARY:{{ .Title }}
+URL:{{ .Permalink | absURL }}
+{{ if .Params.location -}}
+LOCATION:{{ .Params.location }}
+{{ with .Params.geo -}}
+GEO:{{ . }}
+{{ end -}}
+{{ else -}}
+LOCATION:St. Petersburger Str. 21\n01069 Dresden
+GEO:51.0448464;13.7401122
+{{ end -}}
+DTSTART:{{ .Date.UTC | time.Format "20060102T150405Z" }}
+{{ if .ExpiryDate -}}
+DTEND:{{ .ExpiryDate.UTC | time.Format "20060102T150405Z" }}
+{{ else -}}
+DURATION:PT4H
+{{ end -}}
+DTSTAMP:{{ now.UTC.Format "20060102T150405Z" }}
+END:VEVENT

@@ -1,7 +1,7 @@
 baseURL = "https://aqua.club-aquarium.de"
 
 # This is a "one page"-website, so we do not need these kinds of pages...
-disableKinds = ["section", "taxonomy", "term", "RSS", "robotsTXT"]
+disableKinds = ["taxonomy", "term", "robotsTXT"]
 
 defaultContentLanguage = "de"
 
@@ -37,3 +37,13 @@ title = "Studentenclub Aquarium"
 
     [params.meta]
         keywords = "studentenclub, bar, cocktails, dresden, events, party, drinks, bier, student"
+
+[outputs]
+    # the following is implicit, see https://gohugo.io/templates/output-formats/#default-output-formats
+    # home = ["HTML", "RSS"]
+
+    # create single event ICS files for each event
+    page = ["HTML", "Calendar"]
+
+    # create ICS for all events
+    section = ["Calendar"]

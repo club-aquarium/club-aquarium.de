@@ -53,6 +53,12 @@
 					<i class="fa fa-clock-o"></i> {{.ExpiryDate | time.Format ":time_short"}}
 				</span>
 				{{ end }}
+				{{- $slug := .Permalink | relURL | replaceRE "/*$" "" | replaceRE "^.*/" "" }}
+				{{- with .OutputFormats.Get "Calendar" }}
+				<a href="{{ .RelPermalink }}" download="{{ $slug }}.ics" title="Veranstaltung speichern" style="float: right;">
+					<i class="fa fa-download" aria-label="Veranstaltung speichern"></i>
+				</a>
+				{{- end }}
 			</div>
 			{{ if isset .Params "location" }}
 			<div>
