@@ -11,9 +11,9 @@ GEO:{{ . }}
 LOCATION:St. Petersburger Str. 21\n01069 Dresden
 GEO:51.0448464;13.7401122
 {{ end -}}
-DTSTART:{{ .Date.UTC | time.Format "20060102T150405Z" }}
+DTSTART;TZID=Europe/Berlin:{{ .Date | time.Format "20060102T150405" }}
 {{ if .ExpiryDate -}}
-DTEND:{{ .ExpiryDate.UTC | time.Format "20060102T150405Z" }}
+DTEND;TZID=Europe/Berlin:{{ .ExpiryDate | time.Format "20060102T150405" }}
 {{ else -}}
 DURATION:PT4H
 {{ end -}}

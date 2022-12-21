@@ -2,6 +2,7 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Hugo (gohugo.io) at {{ .Site.BaseURL }}
 METHOD:PUBLISH
+{{ partial "vtimezone.ics" . -}}
 {{ range .Pages -}}
 {{ partial "vevent.ics" . -}}
 {{ end -}}
