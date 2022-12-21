@@ -13,4 +13,16 @@
     {{ .Render "summary"}}
     </div>
 {{end}}
+	<div style="float: right;">
+		<a href="{{ "index.xml" | absURL }}" title="Veranstaltungen abonnieren">
+			{{- "" -}}
+			<i class="fa fa-rss" aria-label="Veranstaltungen abonnieren"></i>
+			{{- "" -}}
+		</a>
+		<a href="{{ "events/index.ics" | absURL }}" title="Veranstaltungen abonnieren">
+			{{- "" -}}
+			<i class="fa fa-download" aria-label="Veranstaltungen abonnieren"></i>
+			{{- "" -}}
+		</a>
+	</div>
 </div>
