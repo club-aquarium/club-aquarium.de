@@ -17,7 +17,7 @@ DTSTART;TZID=Europe/Berlin:{{ .Date | time.Format "20060102T150405" }}
 {{ if .ExpiryDate -}}
 DTEND;TZID=Europe/Berlin:{{ .ExpiryDate | time.Format "20060102T150405" }}
 {{ else -}}
-DURATION:PT4H
+DTEND;TZID=Europe/Berlin:{{ .Date | time.Format "20060102" }}T235959
 {{ end -}}
 DTSTAMP:{{ now.UTC.Format "20060102T150405Z" }}
 END:VEVENT
