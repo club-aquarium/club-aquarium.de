@@ -3,14 +3,16 @@ UID:{{ .Permalink | absURL }}
 SUMMARY:{{ .Title }}
 URL:{{ .Permalink | absURL }}
 {{ if .Params.location -}}
-LOCATION:{{ .Params.location }}
+LOCATION:{{ partial "escape-text.ics" .Params.location }}
 {{ with .Params.geo -}}
 GEO:{{ . }}
 {{ end -}}
 {{ else -}}
-LOCATION:St. Petersburger Str. 21\n01069 Dresden
+LOCATION:{{ partial "escape-text.ics" `St. Petersburger Str. 21
+01069 Dresden` }}
 GEO:51.0448464;13.7401122
 {{ end -}}
+DESCRIPTION:{{ partial "escape-text.ics" .RawContent }}
 DTSTART;TZID=Europe/Berlin:{{ .Date | time.Format "20060102T150405" }}
 {{ if .ExpiryDate -}}
 DTEND;TZID=Europe/Berlin:{{ .ExpiryDate | time.Format "20060102T150405" }}
