@@ -62,7 +62,14 @@
 			</div>
 			{{ if isset .Params "location" }}
 			<div>
-				<i class="fa fa-location-arrow" aria-hidden="true"></i> {{ .Params.location }}
+				<i class="fa fa-location-arrow" aria-hidden="true"></i>
+				{{ if .Params.geo -}}
+				<a href="geo:{{ .Params.geo | replaceRE "[ ,;]+" "," | safeURL }}">
+				{{- end -}}
+					{{ .Params.location }}
+				{{- if .Params.geo -}}
+				</a>
+				{{- end }}
 			</div>
 			{{ end }}
 		</div>

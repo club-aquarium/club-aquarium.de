@@ -5,7 +5,7 @@ URL:{{ .Permalink | absURL }}
 {{ if .Params.location -}}
 LOCATION:{{ partial "escape-text.ics" .Params.location }}
 {{ with .Params.geo -}}
-GEO:{{ . }}
+GEO:{{ . | replaceRE "[ ,;]+" ";" }}
 {{ end -}}
 {{ else -}}
 LOCATION:{{ partial "escape-text.ics" `St. Petersburger Str. 21
