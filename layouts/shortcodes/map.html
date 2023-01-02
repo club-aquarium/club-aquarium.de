@@ -1,11 +1,9 @@
 <p id="map" class="unloaded">
     <a class="btn">{{ .Site.Params.map_button_text | default "Load external map content"}}</a>
 </p>
-{{- $css := resources.GetRemote "https://unpkg.com/leaflet/dist/leaflet.css" -}}
-{{- $vendor_js := resources.GetRemote "https://unpkg.com/leaflet/dist/leaflet.js" -}}
 {{- $js := resources.Get "js/map.ts" | js.Build (dict "target" "es2015") -}}
 <script lang="js">
-    const leaflet_css_url = "{{ $css.RelPermalink }}";
-    const leaflet_js_url = "{{ $vendor_js.RelPermalink }}";
+    const leaflet_css_url = "/leaflet/leaflet.css";
+    const leaflet_js_url = "/leaflet/leaflet.js";
 </script>
 <script src="{{ $js.RelPermalink }}"></script>
