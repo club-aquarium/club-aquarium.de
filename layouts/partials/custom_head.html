@@ -1,5 +1,8 @@
 <!-- Override theme defaults -->
-<link rel="stylesheet" href='{{ "css/design.css" | absURL }}'>
+{{ $sass_main := resources.Get "style/index.scss" }}
+{{ $style_main := $sass_main | resources.ToCSS (dict "includePaths" "assets") | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style_main.Permalink }}" integrity="{{ $style_main.Data.Integrity }}">
+
 <!-- For our events -->
 <link rel="stylesheet" href='{{ "css/timeline.css" | absURL }}'>
 

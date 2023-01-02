@@ -1,0 +1,51 @@
+/* Links */
+@import 'style/links';
+/* Map */
+@import 'style/map';
+
+/* Content / Sections */
+.post-holder.odd {
+    background: #B80135; /* 22343A*/
+    color: white; /*BBC7CC*/
+}
+.post-holder {
+    background: #f2efe8;
+}
+body {
+    color: #3A4145;
+}
+
+/* Footer */
+.site-footer {
+    color: black;
+    background-color: #ffab00;
+}
+.site-footer a {
+    color: black;
+}
+.site-footer a:hover {
+    color: #323232;
+}
+
+/* Contact icons */
+section.post-content i.fa {
+    text-align: right;
+    min-width: 1em;
+}
+
+/* Allow the events section to be bigger */
+#events {
+    width: 95%;
+    max-width: none;
+
+    .post-header,.post-content > :not(.timeline) {
+        /* Align header and text with other secions (width = 80% / 95%) */
+        width: 84.21%;
+        max-width: 800px;
+        margin: 0rem auto;
+    }
+}
+
+ul {
+    padding-left: unquote("min(1em, 40px)");
+}

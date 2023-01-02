@@ -1,0 +1,27 @@
+a {
+    &:hover {
+        color: #ffcf6e;
+    }
+
+    /* Header Buttons on Startpage */
+    &.btn {
+        color: black;
+        background-color: #ffab00;
+
+        &:hover {
+            background-color: #ff8400;
+        }
+    }
+
+    /* Scroll Menu on Startpage */
+    &.fn-item {
+        color: #BBC7CC;
+
+        &.active {
+            color: #ffab00;
+        }
+        &:hover {
+            color: #ff8400;
+        }
+    }
+}
