@@ -36,7 +36,7 @@ section.post-content i.fa {
 /* Allow the events section to be bigger */
 #events {
     width: 95%;
-    max-width: none;
+    max-width: 1800px;
 
     .post-header,.post-content > :not(.timeline) {
         /* Align header and text with other secions (width = 80% / 95%) */
