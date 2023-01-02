@@ -1,0 +1,54 @@
+/* Styling of single events */
+footer {
+    position: fixed!important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+main {
+    display: table;
+    background-color: #ffffff;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+article {
+    width: 70%;
+    padding: 2em;
+    background-color: #ffffffd0;
+    border-radius: 1em;
+}
+
+.post-content, .post-title {
+    color: black;
+}
+
+/* Metadata box for time and location */
+.event-meta {
+    background-color: white;
+    border: 2px solid #ffab00;
+    border-bottom: none;
+    color: black;
+    font-size: 16px;
+
+    i.fa {
+        /* Icons within event meta data*/
+        padding-right: 0.25em;
+    }
+
+    &> div {
+        padding: 0.1em 1em;
+
+        &:not(.first) {
+            border: none;
+            border-bottom: #ffab00 2px solid;
+        }
+        &.first {
+            margin: 0;
+            background-color: #ffab00;
+            color: white;
+        }
+    }
+}

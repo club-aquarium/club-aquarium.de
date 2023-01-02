@@ -1,28 +1,7 @@
 {{define "additional_head"}}
-<style lang="css">
-	footer {
-		position: fixed!important;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
-	main {
-		display: table;
-		background-color: #ffffff;
-		background-size: cover;
-		height: 100%;
-		width: 100%;
-	}
-	article {
-		width: 70%;
-		padding: 2em;
-		background-color: #ffffffd0;
-		border-radius: 1em;
-	}
-	.post-content, .post-title {
-		color: black;
-	}
-</style>
+	{{ $sass := resources.Get "style/single-event.scss" }}
+	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 {{end}}
 
 {{ define "main" }}
