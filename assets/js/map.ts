@@ -1,15 +1,15 @@
 declare const L: any
-declare const leaflet_css_url: string
-declare const leaflet_js_url: string
+// @ts-ignore
+import * as leaflet_urls from "@params"
 
 const root = document.getElementById("map")
 if(root) {
 	const leaflet_css = document.createElement("link")
 	leaflet_css.rel = "stylesheet"
-	leaflet_css.href = leaflet_css_url
+	leaflet_css.href = leaflet_urls.css
 
 	const leaflet_js = document.createElement("script")
-	leaflet_js.src = leaflet_js_url
+	leaflet_js.src = leaflet_urls.js
 	leaflet_js.addEventListener("load", (_: unknown): void => {
 		root.classList.remove("unloaded")
 		root.innerHTML = ""
