@@ -1,15 +1,15 @@
 declare const L: any
+declare const leaflet_css_url: string
+declare const leaflet_js_url: string
 
 const root = document.getElementById("map")
 if(root) {
 	const leaflet_css = document.createElement("link")
 	leaflet_css.rel = "stylesheet"
-	leaflet_css.href = "https://unpkg.com/leaflet/dist/leaflet.css"
-	leaflet_css.crossOrigin = ""
+	leaflet_css.href = leaflet_css_url
 
 	const leaflet_js = document.createElement("script")
-	leaflet_js.src = "https://unpkg.com/leaflet/dist/leaflet.js"
-	leaflet_js.crossOrigin = ""
+	leaflet_js.src = leaflet_js_url
 	leaflet_js.addEventListener("load", (_: unknown): void => {
 		root.classList.remove("unloaded")
 		root.innerHTML = ""
