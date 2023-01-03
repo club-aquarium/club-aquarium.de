@@ -21,6 +21,15 @@ article {
     padding: 2em;
     background-color: #ffffffd0;
     border-radius: 1em;
+
+    &.post {
+        height: unset;
+        max-height: 70%;
+        min-height: 20vh;
+        /* Fix mobile devices center above footer */
+        padding-top: 0;
+        padding-bottom: 5rem;
+    }
 }
 
 .post-content, .post-title {
