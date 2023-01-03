@@ -7,7 +7,8 @@ footer {
 }
 
 main {
-    display: table;
+    display: flex;
+    flex-direction: row;
     background-color: #ffffff;
     background-size: cover;
     height: 100%;
@@ -15,6 +16,7 @@ main {
 }
 
 article {
+    align-self: center;
     width: 70%;
     padding: 2em;
     background-color: #ffffffd0;
