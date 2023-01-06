@@ -2,3 +2,6 @@
 	path = themes/hugo-scroll
 	url = ../website_theme.git
 # https://git.club-aquarium.de/technik/website_theme.git
+[submodule "karte"]
+	path = karte
+	url = git@git.club-aquarium.de:gastro/karte.git
