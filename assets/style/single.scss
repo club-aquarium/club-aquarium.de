@@ -1,0 +1,45 @@
+body {
+    background-color: var(--background-color);
+}
+
+aside {
+    position: fixed;
+    height: 100vh;
+    width: fit-content;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+    background-color: var(--background-color-odd);
+    color: var(--text-color-odd);
+
+    #menu-toggle {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        display: none;
+    
+        &:checked ~ nav {
+            width: fit-content;
+
+            overflow-y: scroll;
+            overflow-x: clip;
+            padding-right: 1rem; // some spacing to the content
+        }
+    }
+    label[for="menu-toggle"] {
+        padding: 0 1rem;
+    }
+
+    nav {
+        height: 100%;
+         // hidden by default
+        width: 0px;
+        max-width: unquote("min(max(400px, 25vw), 50vw)");
+        transition: width 1s;
+
+        // ensure content is hidden
+        overflow: hidden;
+        overflow-wrap: break-word;
+    }
+}

@@ -3,16 +3,24 @@
 /* Map */
 @import 'style/map';
 
-/* Content / Sections */
-.post-holder.odd {
-    background: #B80135; /* 22343A*/
-    color: white; /*BBC7CC*/
-}
-.post-holder {
-    background: #f2efe8;
-}
 body {
-    color: #3A4145;
+    --background-color: #f2efe8;
+    --background-color-odd: #B80135;
+
+    --text-color: #3A4145;
+    --text-color-odd: #f2efe8;
+
+    color: var(--text-color);
+}
+
+/* Content / Sections */
+.post-holder {
+    background: var(--background-color);
+
+    &.odd {
+        background: var(--background-color-odd);
+        color: var(--text-color-odd);
+    }
 }
 
 /* Footer */
