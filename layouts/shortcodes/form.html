@@ -1,0 +1,15 @@
+{{ if .IsNamedParams }}
+<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get "hash" }}" width="750" height="900"></iframe>
+{{ else }}
+<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get 0 }}" width="750" height="900"></iframe>
+{{ end }}
+
+{{-
+    $js := resources.Get "js/form.ts" | js.Build (dict
+        "target" "es2015"
+        "params" (dict
+            "baseurl" (.Site.Params.forms_baseurl)
+        )
+    )
+-}}
+<script src="{{ $js.RelPermalink }}"></script>

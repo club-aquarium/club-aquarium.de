@@ -15,6 +15,8 @@ title = "Studentenclub Aquarium"
     # Button text to load actual external content (for GDPR reasons)
     map_button_text = "Externe Inhalte für Kartenansicht (osmand.net)"
 
+    forms_baseurl = "https://cloud.club-aquarium.de/apps/forms/embed/"
+
     # A "copyright"-line to be added at the bottom of the page.
     # Hint: Markdown is supported in here as well. So you may e.g. add a link to your legal imprint-page.
     copyright = "**[Impressum](/imprint)** und **[Datenschutzerklärung](/gdpr)**  \n© Club Aquarium e. V."
