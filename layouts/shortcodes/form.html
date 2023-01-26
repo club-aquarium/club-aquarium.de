@@ -1,7 +1,7 @@
 {{ if .IsNamedParams }}
-<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get "hash" }}" width="750" height="900"></iframe>
+<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get "hash" }}" width="750" height="900" style="max-width: 100%;"></iframe>
 {{ else }}
-<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get 0 }}" width="750" height="900"></iframe>
+<iframe src="{{ .Site.Params.forms_baseurl }}{{ .Get 0 }}" width="750" height="900" style="max-width: 100%;"></iframe>
 {{ end }}
 
 {{-

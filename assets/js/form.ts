@@ -13,6 +13,8 @@ window.addEventListener("message", (event) => {
 	const { width, height } = event.data.payload
 
 	const iframe = document.getElementsByTagName('iframe')[0]
-	iframe.width = width
 	iframe.height = height
+	if (width < window.innerWidth) {
+		iframe.width = width
+	}
 }, false);

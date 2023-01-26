@@ -37,7 +37,7 @@ aside {
 
             overflow-y: scroll;
             overflow-x: clip;
-            padding-right: 1rem; // some spacing to the content
+            padding-right: 2rem; // some spacing to the content
         }
     }
     label[for="menu-toggle"] {
@@ -58,7 +58,7 @@ aside {
 }
 
 @media only screen and (max-width: 500px) {
-    label[for="menu-toggle"] {
+    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
         // increase for menu toggle
         position: fixed;
     }
