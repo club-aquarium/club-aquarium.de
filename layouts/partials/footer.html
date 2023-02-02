@@ -1,0 +1,23 @@
+<footer class="site-footer">
+	<div class="footer-container">
+		{{if eq (len .Site.Params.partners) 0}}
+			{{ with .Site.Params.copyright }}
+			<section class="copyright">{{ . | markdownify }}</section>
+			{{ end }}
+		{{ else }}
+			<h1 class="partners--heading">{{ .Site.Params.partners_heading }}</h1>
+			{{ range $index, $partner := .Site.Params.partners }}
+			<section class="partner">
+				<a href="{{ $partner.url }}" title="{{ $partner.title }}">
+					<img class="partner" src="{{ $partner.image }}" alt="{{ $partner.name }}" />
+				</a>
+			</section>
+			{{ if eq (div (len $.Site.Params.partners) 2) (add 1 $index) }}
+				{{ with $.Site.Params.copyright }}
+				<section class="copyright">{{ . | markdownify }}</section>
+				{{ end }}
+			{{ end }}
+			{{ end }}
+		{{ end }}
+	</div>
+</footer>

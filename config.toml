@@ -40,6 +40,13 @@ title = "Studentenclub Aquarium"
 
     hidedesignbyline = true
 
+    partners_heading = "Unsere Partner"
+
+    partners = [
+        {url = "https://vdsc.de/", name = "Vereinigung Dresdner Studentenclubs (VDSC)", title = "Mitglied im VDSC", image = "images/vdsc.svg"},
+        {url = "https://www.studentenwerk-dresden.de/kultur/", name = "Studentenwerk Dresden", title = "Gefördert durch das Studentenwerk Dresden", image = "images/studentenwerk.svg"}
+    ]
+
     [params.meta]
         keywords = "studentenclub, bar, cocktails, dresden, events, party, drinks, bier, student"
 

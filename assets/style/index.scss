@@ -62,3 +62,54 @@ ul {
 iframe {
     border: none;
 }
+
+.site-footer {
+    .partners--heading {
+        display: none;
+        font-size: 1.3rem;
+        line-height: 1.5em;
+        letter-spacing: normal;
+        margin: 0;
+    }
+
+    .footer-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .partner {
+            height: unquote("max(60px, 6rem)");
+            padding: 0 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .footer-container {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+
+        .partners--heading {
+            display: block;
+            width: 100vw;
+        }
+
+        section {
+            order: 0;
+
+            &.copyright {
+                order: 1;
+                width: 100vw;
+
+                &::before {
+                    // Add a separating line between partners and copyright
+                    border-bottom: 1px solid #1115;
+                    display: block;
+                    content: "";
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
