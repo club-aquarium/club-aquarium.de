@@ -1,28 +1,28 @@
-{{ $events := sort (.Site.GetPage "/events").Pages "Date" }}
-
+{{ $events := sort (.Site.GetPage "/events").RegularPagesRecursive "Date" }}
 {{ $number := default "5" (.Get 0) }}
 
-<div class="timeline">
-{{ range $i,$p := first $number $events }}
-    {{ $class := "timeline-left"}}
-    {{ if not (modBool $i 2)}}
-        {{ $class = "timeline-right"}}
-    {{ end }}
 
-    <div class="timeline-container {{$class}}">
-    {{ .Render "summary"}}
-    </div>
-{{end}}
-	<div style="float: right;">
-		<a href="{{ "index.xml" | absURL }}" title="Veranstaltungen abonnieren">
-			{{- "" -}}
-			<i class="fa fa-rss" aria-label="Veranstaltungen abonnieren"></i>
-			{{- "" -}}
-		</a>
-		<a href="{{ "events/index.ics" | absURL }}" title="Veranstaltungen abonnieren">
-			{{- "" -}}
-			<i class="fa fa-download" aria-label="Veranstaltungen abonnieren"></i>
-			{{- "" -}}
-		</a>
+<div class="timeline">
+	{{ range $i,$p := first $number $events }}
+		{{ $class := "timeline-left"}}
+		{{ if not (modBool $i 2)}}
+			{{ $class = "timeline-right"}}
+		{{ end }}
+	
+		<div class="timeline-container {{$class}}">
+		{{ .Render "summary"}}
+		</div>
+	{{end}}
+		<div style="float: right;">
+			<a href="{{ "index.xml" | absURL }}" title="Veranstaltungen abonnieren">
+				{{- "" -}}
+				<i class="fa fa-rss" aria-label="Veranstaltungen abonnieren"></i>
+				{{- "" -}}
+			</a>
+			<a href="{{ "events/index.ics" | absURL }}" title="Veranstaltungen abonnieren">
+				{{- "" -}}
+				<i class="fa fa-download" aria-label="Veranstaltungen abonnieren"></i>
+				{{- "" -}}
+			</a>
+		</div>
 	</div>
-</div>
