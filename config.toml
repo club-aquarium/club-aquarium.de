@@ -43,8 +43,8 @@ title = "Studentenclub Aquarium"
     partners_heading = "Unsere Partner"
 
     partners = [
-        {url = "https://vdsc.de/", name = "Vereinigung Dresdner Studentenclubs (VDSC)", title = "Mitglied im VDSC", image = "images/vdsc.svg"},
-        {url = "https://www.studentenwerk-dresden.de/kultur/", name = "Studentenwerk Dresden", title = "Gefördert durch das Studentenwerk Dresden", image = "images/studentenwerk.svg"}
+        {url = "https://vdsc.de/", name = "Vereinigung Dresdner Studentenclubs (VDSC)", title = "Mitglied im VDSC", image = "/images/vdsc.svg"},
+        {url = "https://www.studentenwerk-dresden.de/kultur/", name = "Studentenwerk Dresden", title = "Gefördert durch das Studentenwerk Dresden", image = "/images/studentenwerk.svg"}
     ]
 
     [params.meta]
