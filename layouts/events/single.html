@@ -1,7 +1,7 @@
 {{define "additional_head"}}
 	{{ $sass := resources.Get "style/single-event.scss" }}
 	{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
-	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
 {{end}}
 
 {{ define "main" }}
