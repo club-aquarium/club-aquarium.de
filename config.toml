@@ -11,6 +11,9 @@ theme = "hugo-scroll"
 # The "title" of your website
 title = "Studentenclub Aquarium"
 
+[permalinks]
+    events = "/:year/:month/:slug/"
+
 [params]
     # Button text to load actual external content (for GDPR reasons)
     map_button_text = "Externe Inhalte für Kartenansicht (osmand.net)"
