@@ -1,40 +1,10 @@
-/* Links */
-@import 'style/links';
+:root {
+    --color-primary: #ffab00!important;
+    --color-primary-text: #000!important;
+}
+
 /* Map */
 @import 'style/map';
-
-body {
-    --background-color: #f2efe8;
-    --background-color-odd: #B80135;
-    --background-color-highlight: #fff;
-
-    --text-color: #3A4145;
-    --text-color-odd: #f2efe8;
-
-    color: var(--text-color);
-}
-
-/* Content / Sections */
-.post-holder {
-    background: var(--background-color);
-
-    &.odd {
-        background: var(--background-color-odd);
-        color: var(--text-color-odd);
-    }
-}
-
-/* Footer */
-.site-footer {
-    color: black;
-    background-color: #ffab00;
-}
-.site-footer a {
-    color: black;
-}
-.site-footer a:hover {
-    color: #323232;
-}
 
 /* Contact icons */
 section.post-content i.fa {
