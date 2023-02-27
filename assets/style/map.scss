@@ -14,6 +14,10 @@
 }
 
 /* Use opposite colors for background (colors from hugo-scroll theme) */
+.page #map.unloaded {
+    background: var(--color-background-darker);
+}
+
 .post-holder {
     #map.unloaded {
         background: var(--color-background-alt);
