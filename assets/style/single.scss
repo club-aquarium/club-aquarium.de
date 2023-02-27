@@ -1,19 +1,8 @@
-body {
-    background-color: var(--background-color);
-    color: var(--text-color)
-}
-
 @media (prefers-color-scheme: dark) {
-    body {
-        --background-color: #171717;
-        --background-color-highlight: #252525;
-        --text-color: #d8d8d8;
-    }    
-}
-
-table tbody > tr:nth-child(2n+1) > td, table tbody > tr:nth-child(2n+1) > th {
-    background-color: var(--background-color-highlight);
-    color: var(--text-color);
+    :root {
+        --color-background-main: #171717;
+        --color-text-main: #d8d8d8;
+    }
 }
 
 aside {
@@ -24,8 +13,8 @@ aside {
     top: 0;
     left: 0;
 
-    background-color: var(--background-color-odd);
-    color: var(--text-color-odd);
+    background-color: var(--color-background-alt);
+    color: var(--color-text-alt);
 
     #menu-toggle {
         -webkit-appearance: none;

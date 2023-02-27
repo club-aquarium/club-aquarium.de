@@ -9,7 +9,7 @@ footer {
 main {
     display: flex;
     flex-direction: row;
-    background-color: #B80135;
+    background-color: var(--color-background-alt);
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -32,16 +32,12 @@ article {
     }
 }
 
-.post-content, .post-title {
-    color: black;
-}
-
 /* Metadata box for time and location */
 .event-meta {
-    background-color: white;
-    border: 2px solid #ffab00;
+    background-color: var(--color-background-main);
+    border: 2px solid var(--color-primary);
     border-bottom: none;
-    color: black;
+    color: var(--color-text-main);
     font-size: 16px;
 
     i.fa {
@@ -54,11 +50,11 @@ article {
 
         &:not(.first) {
             border: none;
-            border-bottom: #ffab00 2px solid;
+            border-bottom: var(--color-primary) 2px solid;
         }
         &.first {
             margin: 0;
-            background-color: #ffab00;
+            background-color: var(--color-primary);
             color: white;
         }
     }
