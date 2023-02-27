@@ -46,12 +46,41 @@ aside {
     }
 }
 
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+}
+
+main .page {
+    // footer
+    padding-bottom: 80px;
+}
+
 @media only screen and (max-width: 500px) {
     #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
         // increase for menu toggle
         position: fixed;
     }
     aside nav {
-        max-width: 100vw;
+        max-width: unquote("min(100vw, max(400px, 25vw))");
+    }
+    main .page {
+        // footer
+        padding-bottom: 245px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
+        // increase for menu toggle
+        position: fixed;
+    }
+    aside nav {
+        max-width: unquote("min(100vw, max(400px, 25vw))");
+    }
+    main .page {
+        // footer
+        padding-bottom: 180px;
     }
 }
