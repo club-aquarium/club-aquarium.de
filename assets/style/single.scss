@@ -54,7 +54,7 @@ aside {
     z-index: 999;
 }
 
-main .page {
+main {
     // footer
     padding-bottom: 80px;
 }
@@ -67,9 +67,9 @@ main .page {
     aside nav {
         max-width: unquote("min(100vw, max(400px, 25vw))");
     }
-    main .page {
+    main {
         // footer
-        padding-bottom: 245px;
+        padding-bottom: 220px;
     }
 }
 
@@ -81,8 +81,8 @@ main .page {
     aside nav {
         max-width: unquote("min(100vw, max(400px, 25vw))");
     }
-    main .page {
+    main {
         // footer
-        padding-bottom: 180px;
+        padding-bottom: 220px;
     }
 }
