@@ -150,11 +150,12 @@ function searchGames(needle: string) {
 }
 
 function updateFilter(element: HTMLInputElement, value: number) {
+    element.setCustomValidity('')
     if (!element.checkValidity()) return
     const filter = Object.values(FILTER_VALUES).filter(f => 'element' in f && f.element === element)[0]
     if (Number.isNaN(value)) {
         filter.value = filter.limit
-        element.value = String(filter.limit)
+        element.setCustomValidity('Ungültige Eingabe')
     } else {
         filter.value = value
     }
@@ -172,8 +173,8 @@ function updateFilter(element: HTMLInputElement, value: number) {
 
 function clearFilter(id: string) {
     const input = document.getElementById(id) as HTMLInputElement
-    input.value = ''
-    updateFilter(input, NaN)
+    const filter = Object.values(FILTER_VALUES).filter(f => 'element' in f && f.element === input)[0]
+    updateFilter(input, filter.limit)
 }
 
 // Setup limits
