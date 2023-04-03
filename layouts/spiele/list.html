@@ -56,7 +56,7 @@
           <div class="article-wrapper">
             <figure>
               {{ with index (.Resources.ByType "image") 0 }}
-              <img src="{{ .Permalink }}" alt="" />
+              <img src="{{ .Permalink }}" alt="" loading="lazy" />
               {{ end }}
             </figure>
             <div class="article-body">
