@@ -48,15 +48,7 @@ aside {
 }
 
 .site-footer {
-    position: fixed;
-    bottom: 0;
     min-width: 100%;
-    z-index: 999;
-}
-
-main {
-    // footer
-    padding-bottom: 80px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -67,10 +59,6 @@ main {
     aside nav {
         max-width: unquote("min(100vw, max(400px, 25vw))");
     }
-    main {
-        // footer
-        padding-bottom: 220px;
-    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -80,9 +68,5 @@ main {
     }
     aside nav {
         max-width: unquote("min(100vw, max(400px, 25vw))");
-    }
-    main {
-        // footer
-        padding-bottom: 220px;
     }
 }
