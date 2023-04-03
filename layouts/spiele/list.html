@@ -1,0 +1,82 @@
+{{define "additional_head"}}
+	{{ $singleScss := resources.Get "style/single.scss" }}
+	{{ $gamesScss := resources.Get "style/games.scss" }}
+	{{ $style := slice $singleScss $gamesScss | resources.Concat "style/gamesstyle.scss" | resources.ToCSS | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+{{end}}
+
+{{ define "partials/games-filter.html" }}
+<div class="filter">
+  <input class="filter__toggle" type="checkbox" id="filter-sw-{{- .id -}}" onchange="enableFilter('{{- .id -}}', this.checked)">
+  <label class="filter__label" for="filter-sw-{{- .id -}}"><i class="fa {{ .icon }}"></i> {{ .text }}</label>
+  <div class="filter-input">
+    <label>Ab <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-min" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-min')"><i class="fa fa-times"></i></button></label><br />
+    {{ if default true .withMax }}
+    <label>Bis <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-max" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-max')"><i class="fa fa-times"></i></button></label>
+    {{ end}}
+  </div>
+</div>
+{{ end }}
+
+{{ define "main" }}
+{{ $complexityLevels := slice "sehr leicht" "einfach" "mittel" "fortgeschritten" "Experte" }}
+  <main class="content page" role="main">
+      <header class="post page">
+        <a id="blog-logo" href="{{ "/" | relURL }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ .Site.Title }}</a>
+        <h1 class="post-title">{{ .Title }}</h1>
+        <section class="post-content">
+          {{ .Content }}
+        </section>
+      </header>
+      <nav class="post">
+        <h2>Filter</h2>
+        <form class="filters">
+          {{ partial "games-filter" (dict "id" "players" "icon" "fa-users" "text" "Anzahl Spieler" "withMax" false) }}
+          {{ partial "games-filter" (dict "id" "play-time" "icon" "fa-clock-o" "text" "Spielzeit") }}
+          {{ partial "games-filter" (dict "id" "complexity" "icon" "fa-book" "text" "Komplexität") }}
+          {{ partial "games-filter" (dict "id" "player-age" "icon" "fa-birthday-cake" "text" "Empfohlenes Alter") }}
+          <div class="filter">
+            <input class="filter__toggle" type="checkbox" id="filter-sw-search" onchange="enableFilter('search', this.checked)">
+            <label class="filter__label" for="filter-sw-search"><i class="fa fa-search"></i> Suche</label>
+            <div class="filter-input">
+              <input id="filter-search" placeholder="Titel des Spiels" oninput="searchGames(this.value)" />
+            </div>
+          </div>
+        </form>
+      </nav>
+      <section class="post articles">
+        {{ range .Pages }}
+        <article data-title="{{ .Title }}"
+          data-players-min="{{ .Params.playersMin }}"
+          data-players-max="{{ .Params.playersMax }}"
+          data-play-time="{{ .Params.playTime }}"
+          data-player-age="{{ .Params.playerAge }}"
+          data-complexity="{{ .Params.complexity }}"
+          onclick="window.open('{{- .Permalink | safeHTMLAttr -}}', '_self')">
+          <div class="article-wrapper">
+            <figure>
+              {{ with index (.Resources.ByType "image") 0 }}
+              <img src="{{ .Permalink }}" alt="" />
+              {{ end }}
+            </figure>
+            <div class="article-body">
+              <h2>{{ .Title }}</h2>
+              <div class="meta-data">
+                <div title="Spieleranzahl"><i class="fa fa-users"></i> {{ .Params.playersMin }} - {{ .Params.playersMax }}</div>
+                <div title="Spielzeit"><i class="fa fa-clock-o"></i> {{ .Params.playTime }} Min.</div>
+                <div title="Empfohlenes Alter"><i class="fa fa-birthday-cake"></i> {{ .Params.playerAge }}</div>
+                <div title="Komplexität"><i class="fa fa-book"></i> {{ index $complexityLevels .Params.complexity }}</div>
+              </div>
+              <p>
+                {{ .Summary | truncate 70 "…" }}
+                <a href="{{- .Permalink | safeHTMLAttr -}}" class="read-more">Weiter lesen…</a>
+              </p>
+            </div>
+          </div>
+        </article>
+        {{ end }}
+    </section>
+  </main>
+  {{ $js := resources.Get "js/games.ts" | js.Build | resources.Fingerprint}}
+  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" async></script>
+{{ end }}

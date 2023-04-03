@@ -61,4 +61,4 @@ title = "Studentenclub Aquarium"
     page = ["HTML", "Calendar"]
 
     # create ICS for all events
-    section = ["Calendar"]
+    section = ["Calendar", "HTML"]
