@@ -1,10 +1,44 @@
 :root {
+    --color-error: #ff0000;
     --color-primary: #ffab00!important;
     --color-primary-text: #000!important;
 }
 
 /* Map */
 @import 'style/map';
+
+input, button {
+    box-sizing: border-box;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border: 2px solid var(--color-text-lighter);
+    border-radius: 4px;
+    min-height: 34px;
+    min-width: 34px;
+    padding: 6px;
+}
+input {
+    &:invalid {
+        border-color: var(--color-error);
+    }
+    &:focus-visible {
+        outline: none;
+    }
+    &:focus:not(:invalid) {
+        border-color: var(--color-primary);
+    }
+}
+button {
+    cursor: pointer;
+    &:active {
+        border-color: var(--color-primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-text)!important;
+        outline-offset: 2px;
+    }
+}
 
 /* Contact icons */
 section.post-content i.fa {
