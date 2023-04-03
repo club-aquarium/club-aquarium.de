@@ -6,7 +6,10 @@
 	justify-content: space-around;
 	
 	.filter {
-		flex-basis: 200px;
+		flex: 1 1 unquote("max(33%, 200px)");
+		background-color: var(--color-background-darker);
+		border-radius: 4px;
+		padding: 1rem 0;
 
 		button {
 			display: flex;
@@ -16,6 +19,8 @@
 
 		.filter-input {
 			display: none;
+			padding: 0 1rem;
+
 			label {
 				display: flex;
 				justify-content: space-between;
