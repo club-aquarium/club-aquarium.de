@@ -4,12 +4,21 @@
 	flex-wrap: wrap;
 	gap: 2rem;
 	justify-content: space-around;
-	
+
+	output {
+		flex: 1 1 100%;
+		text-align: center;
+	}
+
 	.filter {
 		flex: 1 1 unquote("max(33%, 200px)");
 		background-color: var(--color-background-darker);
 		border-radius: 4px;
 		padding: 1rem 0;
+
+		&.active {
+			border-left: 4px solid #11aa11;
+		}
 
 		button {
 			display: flex;

@@ -129,6 +129,18 @@ function filterGames() {
 
 function enableFilter(filter: string, enabled: boolean) {
     FILTERS[filter].value = enabled
+    let el = (FILTERS[filter].element as HTMLElement)
+    while (el && !el.classList.contains('filter')) el = el.parentElement!;
+    if (el) {
+        if (el.classList.contains('active') && !enabled) el.classList.remove('active')
+        else if (!el.classList.contains('active') && enabled) el.classList.add('active')
+    }
+    if (Object.values(FILTERS).some(f => f.value)) {
+        const output = document.querySelector('.filters output')! as HTMLOutputElement
+        output.innerHTML = 'Aktive Filter: ' + Object.values(FILTERS).map(f => f.value ? (f.element.labels![0].innerHTML) : undefined).filter(f => f !== undefined).join(', ')
+    } else {
+        document.querySelector('.filters output')!.textContent = 'Keine Filter aktiv'
+    }
     filterGames()
 }
 
