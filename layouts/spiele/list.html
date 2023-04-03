@@ -7,12 +7,13 @@
 
 {{ define "partials/games-filter.html" }}
 <div class="filter">
+  <button type="button" title="Filter entfernen" onclick="enableFilter('{{- .id -}}', false)"><i class="fa fa-times"></i></button>
   <input class="filter__toggle" type="checkbox" id="filter-sw-{{- .id -}}" onchange="enableFilter('{{- .id -}}', this.checked)">
   <label class="filter__label" for="filter-sw-{{- .id -}}"><i class="fa {{ .icon }}"></i> {{ .text }}</label>
   <div class="filter-input">
-    <label>Ab <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-min" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-min')"><i class="fa fa-times"></i></button></label><br />
+    <label>Ab <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-min" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-min')"><i class="fa fa-undo"></i></button></label><br />
     {{ if default true .withMax }}
-    <label>Bis <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-max" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-max')"><i class="fa fa-times"></i></button></label>
+    <label>Bis <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-max" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-max')"><i class="fa fa-undo"></i></button></label>
     {{ end}}
   </div>
 </div>

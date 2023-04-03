@@ -129,7 +129,8 @@ function filterGames() {
 
 function enableFilter(filter: string, enabled: boolean) {
     FILTERS[filter].value = enabled
-    let el = (FILTERS[filter].element as HTMLElement)
+    let el = FILTERS[filter].element as HTMLElement
+    (el as HTMLInputElement).checked = enabled
     while (el && !el.classList.contains('filter')) el = el.parentElement!;
     if (el) {
         if (el.classList.contains('active') && !enabled) el.classList.remove('active')

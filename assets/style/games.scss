@@ -15,20 +15,24 @@
 		background-color: var(--color-background-darker);
 		border-radius: 4px;
 		padding: 1rem 0;
+		min-height: 34px;
 
 		&.active {
 			border-left: 4px solid #11aa11;
 		}
+		&:not(.active) > button {
+			display: none;
+		}
 
-		button {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		> button {
+			position: absolute;
+			right: 1rem;
 		}
 
 		.filter-input {
 			display: none;
-			padding: 0 1rem;
+			padding: 1.5rem 1rem;
+			padding-bottom: 0;
 
 			label {
 				display: flex;
