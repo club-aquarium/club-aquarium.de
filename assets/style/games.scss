@@ -80,14 +80,14 @@
 		position: relative;
 		border-radius: 16px;
 		box-shadow: none;
-		background: var(--color-background-alt);
+		background: var(--section-dark-bg-color);
 		transform-origin: center;
 		transition: all 0.4s ease-in-out;
 		overflow: hidden;
 
 		&:hover, &:focus-within {
 			--img-scale: 1.1;
-			--title-color: var(--color-primary);
+			--title-color: var(--highlight);
 			--link-icon-opacity: 1;
 			box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 		}

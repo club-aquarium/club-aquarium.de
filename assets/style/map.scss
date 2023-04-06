@@ -15,15 +15,15 @@
 
 /* Use opposite colors for background (colors from hugo-scroll theme) */
 .page #map.unloaded {
-    background: var(--color-background-darker);
+    background: var(--section-light-bg-color);
 }
 
 .post-holder {
     #map.unloaded {
-        background: var(--color-background-alt);
+        background: var(--section-dark-bg-color);
     }
 
     &:nth-child(odd) #map.unloaded {
-        background: var(--color-background-main);
+        background: var(--section-light-bg-color);
     }
 }

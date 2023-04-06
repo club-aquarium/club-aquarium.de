@@ -1,7 +1,30 @@
+$primary: #ffab00;
+$primary-text: #000;
+
 :root {
     --color-error: #ff0000;
-    --color-primary: #ffab00!important;
-    --color-primary-text: #000!important;
+
+    /* Theme variables: */
+    // e.g. button background color
+    --highlight: #{$primary};
+    // text color on buttons
+    --highlight-contrast: #{$primary-text};
+    // button hover color of button
+    --highlight-inverse: #ff7600;
+    // button hover color text
+    --highlight-inverse-contrast: #{$primary-text};
+    // the color of the text on the image
+    --cover-text-color: #fff;
+    // shadow effect
+    --cover-title-text-shadow: black 0 0 7px;
+    --sticky-menu-text-color: #{$primary};
+    --footer-color-background: #{$primary};
+    --footer-color: #{$primary-text};
+}
+
+// fit hover style of footer links
+.site-footer a:hover {
+    color: var(--section-light-text-color, #{$primary-text});
 }
 
 /* Map */

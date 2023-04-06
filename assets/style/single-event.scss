@@ -9,7 +9,7 @@ footer {
 main {
     display: flex;
     flex-direction: row;
-    background-color: var(--color-background-alt);
+    background-color: var(--section-dark-bg-color);
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -34,8 +34,8 @@ article {
 
 /* Metadata box for time and location */
 .event-meta {
-    background-color: var(--color-background-main);
-    border: 2px solid var(--color-primary);
+    background-color: var(--section-light-bg-color);
+    border: 2px solid var(--highlight);
     border-bottom: none;
     color: var(--color-text-main);
     font-size: 16px;
@@ -50,11 +50,11 @@ article {
 
         &:not(.first) {
             border: none;
-            border-bottom: var(--color-primary) 2px solid;
+            border-bottom: var(--highlight) 2px solid;
         }
         &.first {
             margin: 0;
-            background-color: var(--color-primary);
+            background-color: var(--highlight);
             color: white;
         }
     }

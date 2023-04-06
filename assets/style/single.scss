@@ -1,9 +1,14 @@
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background-main: #171717;
+        --section-light-bg-color: #171717;
         --color-background-darker: #252525;
-        --color-text-main: #d8d8d8;
+        --section-light-text-color: #d8d8d8;
+        --section-dark-text-color: #f2efe8;
     }
+}
+
+main {
+    background-color: var(--color-background);
 }
 
 aside {
@@ -14,8 +19,8 @@ aside {
     top: 0;
     left: 0;
 
-    background-color: var(--color-background-alt);
-    color: var(--color-text-alt);
+    background-color: var(--section-dark-bg-color);
+    color: var(--section-dark-text-color);
 
     #menu-toggle {
         -webkit-appearance: none;

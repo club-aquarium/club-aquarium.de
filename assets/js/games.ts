@@ -185,7 +185,6 @@ Object.entries(FILTER_VALUES).forEach(([key, filter]) => {
             filter.value = filter.limit
             if (key.endsWith('Max')) {
                 filter.element.max = String(filter.limit)
-                console.log(key, filter.limit)
                 filter.element.min = String(FILTER_VALUES[key.slice(0, -2) + 'in'].limit)
             } else {
                 filter.element.min = String(filter.limit)
