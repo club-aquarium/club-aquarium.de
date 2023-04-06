@@ -22,8 +22,7 @@
 <main class="content page-template page-{{ .Slug }}" role="main">
   <article class="post page">
     <header class="post-header">
-      <a id="blog-logo" href="{{ " /" | relURL }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ .Site.Title
-        }}</a>
+      <a id="blog-logo" href="{{- relref . "/spiele" -}}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Zur Spielekarte</a>
     </header>
     <h1 class="post-title">{{ .Title }}</h1>
     <section class="meta-data">
@@ -32,13 +31,13 @@
       <div title="Empfohlenes Alter"><i class="fa fa-birthday-cake"></i> {{ .Params.playerAge }} Jahre</div>
       <div title="Komplexität"><i class="fa fa-book"></i> {{ index $complexityLevels .Params.complexity }}</div>
     </section>
-    <section class="post-content">
-      {{ .Content }}
-    </section>
     <section class="post-images">
       {{ range .Resources.ByType "image" }}
         <a href="{{- .Permalink | safeHTMLAttr -}}" target="games-preview-image"><img src="{{ .Permalink }}" alt="" /></a>
       {{ end }}
+    </section>
+    <section class="post-content">
+      {{ .Content }}
     </section>
   </article>
 </main>
