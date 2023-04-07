@@ -7,7 +7,6 @@
 
 {{ define "partials/games-filter.html" }}
 <div class="filter">
-  <button type="button" title="Filter entfernen" onclick="enableFilter('{{- .id -}}', false)"><i class="fa fa-times"></i></button>
   <input class="filter__toggle" type="checkbox" id="filter-sw-{{- .id -}}" onchange="enableFilter('{{- .id -}}', this.checked)">
   <label class="filter__label" for="filter-sw-{{- .id -}}"><i class="fa {{ .icon }}"></i> {{ .text }}</label>
   <div class="filter-input">
@@ -16,6 +15,7 @@
     <label>Bis <input min="0" max="999" step="1" value="0" type="number" id="filter-{{- .id -}}-max" oninput="updateFilter(this, Number.parseInt(this.value))" /><button type="button" title="Zurücksetzen" onclick="clearFilter('filter-{{- .id -}}-max')"><i class="fa fa-undo"></i></button></label>
     {{ end}}
   </div>
+  <button type="button" onclick="enableFilter('{{- .id -}}', false)"><i class="fa fa-times"></i> Filter entfernen</button>
 </div>
 {{ end }}
 
@@ -40,7 +40,7 @@
             <input class="filter__toggle" type="checkbox" id="filter-sw-search" onchange="enableFilter('search', this.checked)">
             <label class="filter__label" for="filter-sw-search"><i class="fa fa-search"></i> Suche</label>
             <div class="filter-input">
-              <input id="filter-search" placeholder="Titel des Spiels" oninput="searchGames(this.value)" />
+              <input id="filter-search" aria-label="Suche nach Spielnamen" placeholder="Titel des Spiels" oninput="searchGames(this.value)" />
             </div>
           </div>
           <output>Keine Filter aktiv</output>
@@ -48,13 +48,15 @@
       </nav>
       <section class="post articles">
         {{ range .Pages }}
-        <article data-title="{{ .Title }}"
+        <article tabindex="0"
+          data-title="{{ .Title }}"
           data-players-min="{{ .Params.playersMin }}"
           data-players-max="{{ .Params.playersMax }}"
           data-play-time="{{ .Params.playTime }}"
           data-player-age="{{ .Params.playerAge }}"
           data-complexity="{{ .Params.complexity }}"
-          onclick="window.open('{{- .Permalink | safeHTMLAttr -}}', '_self')">
+          data-link="{{- .Permalink | safeHTMLAttr -}}"
+          onclick="handleOpen(event)">
           <div class="article-wrapper">
             <figure>
               {{ with index (.Resources.ByType "image") 0 }}

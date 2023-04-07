@@ -17,16 +17,15 @@
 		padding: 1rem 0;
 		min-height: 34px;
 
+		&:focus-within {
+			box-shadow: 0 2px var(--highlight);
+		}
+
 		&.active {
 			border-left: 4px solid #11aa11;
 		}
 		&:not(.active) > button {
 			display: none;
-		}
-
-		> button {
-			position: absolute;
-			right: 1rem;
 		}
 
 		.filter-input {
@@ -43,6 +42,12 @@
 					width: 110px;
 				}
 			}
+		}
+
+		> button {
+			margin: 1rem;
+			margin-bottom: 0;
+			width: calc(100% - 2rem);
 		}
 
 		&__label {
@@ -90,6 +95,10 @@
 			--title-color: var(--highlight);
 			--link-icon-opacity: 1;
 			box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--highlight);
 		}
 
 		h2 {

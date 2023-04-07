@@ -178,6 +178,18 @@ function clearFilter(id: string) {
     updateFilter(input, filter.limit)
 }
 
+/**
+ * Helper to allow accessible handling of clicks and keyboard events
+ *
+ * @param event The click or key event
+ */
+function handleOpen(event: MouseEvent|KeyboardEvent) {
+    if (event.type === 'click' || (event instanceof KeyboardEvent && (event.key === 'Enter' || event.key === 'Space'))) {
+        const link = (event.currentTarget as HTMLElement).getAttribute('data-link')
+        if (link) window.open(link, '_self')
+    }
+}
+
 // Setup limits
 Object.entries(FILTER_VALUES).forEach(([key, filter]) => {
     if ("element" in filter) {
@@ -208,3 +220,4 @@ window.enableFilter = enableFilter
 window.filterGames = filterGames
 window.searchGames = searchGames
 window.updateFilter = updateFilter
+window.handleOpen = handleOpen
