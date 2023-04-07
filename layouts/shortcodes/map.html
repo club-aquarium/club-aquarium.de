@@ -1,5 +1,5 @@
 <p id="map" class="unloaded">
-    <a class="btn">{{ .Site.Params.map_button_text | default "Load external map content"}}</a>
+    <a class="btn" href="#">{{ .Site.Params.map_button_text | default "Load external map content"}}</a>
 </p>
 {{-
 $js := resources.Get "js/map.ts" | js.Build (dict

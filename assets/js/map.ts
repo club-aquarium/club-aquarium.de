@@ -25,8 +25,14 @@ if(root) {
 		flag?.parentNode?.removeChild(flag)
 	})
 
-	root.firstElementChild?.addEventListener("click", (_: unknown): void => {
+	const handleLoad = (event: Event): void => {
+		if (event instanceof KeyboardEvent && event.key !== 'Enter') return
+
+		event.preventDefault()
 		document.head.appendChild(leaflet_css)
 		document.head.appendChild(leaflet_js)
-	})
+	}
+
+	root.querySelector('a.btn')!.addEventListener("click", handleLoad)
+	root.querySelector('a.btn')!.addEventListener("keyup", handleLoad)
 }
