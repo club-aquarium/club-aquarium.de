@@ -9,6 +9,8 @@
 
 main {
     background-color: var(--color-background);
+    // for the footer
+    min-height: calc(100vh - 80px);
 }
 
 aside {
@@ -56,6 +58,19 @@ aside {
     min-width: 100%;
 }
 
+@media only screen and (max-width: 575px) {
+    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
+        // increase for menu toggle
+        position: fixed;
+    }
+    aside nav {
+        max-width: unquote("min(100vw, max(400px, 25vw))");
+    }
+    main {
+        min-height: calc(100vh - 180px);
+    }
+}
+
 @media only screen and (max-width: 500px) {
     #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
         // increase for menu toggle
@@ -64,14 +79,7 @@ aside {
     aside nav {
         max-width: unquote("min(100vw, max(400px, 25vw))");
     }
-}
-
-@media only screen and (max-width: 575px) {
-    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
-        // increase for menu toggle
-        position: fixed;
-    }
-    aside nav {
-        max-width: unquote("min(100vw, max(400px, 25vw))");
+    main {
+        min-height: calc(100vh - 174px);
     }
 }
