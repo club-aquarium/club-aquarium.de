@@ -11,8 +11,6 @@ main {
     flex-direction: row;
     background-color: var(--section-dark-bg-color);
     background-size: cover;
-    height: 100%;
-    width: 100%;
 }
 
 article {
@@ -23,12 +21,10 @@ article {
     border-radius: 1em;
 
     &.post {
-        height: unset;
-        max-height: 70%;
         min-height: 20vh;
         /* Fix mobile devices center above footer */
-        padding-top: 0;
-        padding-bottom: 5rem;
+        margin: 2rem auto 5em auto;
+        padding-top: 1rem;
     }
 }
 
