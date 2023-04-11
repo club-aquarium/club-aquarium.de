@@ -1,16 +1,15 @@
 /* Styling of single events */
-footer {
-    position: fixed!important;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+
+@import "single";
+
+body, main {
+    background-color: var(--section-dark-bg-color);
+    background-size: cover;
 }
 
 main {
     display: flex;
-    flex-direction: row;
-    background-color: var(--section-dark-bg-color);
-    background-size: cover;
+    padding: 2rem 0;
 }
 
 article {
@@ -19,12 +18,15 @@ article {
     padding: 2em;
     background-color: #f2efe8d0;
     border-radius: 1em;
+    color: #000;
 
     &.post {
         min-height: 20vh;
+        max-height: 80vh;
+        overflow-y: scroll;
         /* Fix mobile devices center above footer */
-        margin: 2rem auto 5em auto;
-        padding-top: 1rem;
+        margin: 0 auto;
+        padding: 1rem 2rem;
     }
 }
 
@@ -33,7 +35,7 @@ article {
     background-color: var(--section-light-bg-color);
     border: 2px solid var(--highlight);
     border-bottom: none;
-    color: var(--color-text-main);
+    color: var(--section-light-text-color);
     font-size: 16px;
 
     i.fa {
@@ -51,7 +53,7 @@ article {
         &.first {
             margin: 0;
             background-color: var(--highlight);
-            color: white;
+            color: var(--highlight-contrast);
         }
     }
 }

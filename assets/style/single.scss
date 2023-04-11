@@ -11,47 +11,7 @@ main {
     background-color: var(--color-background);
     // for the footer
     min-height: calc(100vh - 80px);
-}
-
-aside {
-    position: fixed;
-    height: 100vh;
-    width: fit-content;
-    z-index: 0;
-    top: 0;
-    left: 0;
-
-    background-color: var(--section-dark-bg-color);
-    color: var(--section-dark-text-color);
-
-    #menu-toggle {
-        -webkit-appearance: none;
-        appearance: none;
-        display: none;
-    
-        &:checked ~ nav {
-            width: fit-content;
-
-            overflow-y: scroll;
-            overflow-x: clip;
-            padding-right: 2rem; // some spacing to the content
-        }
-    }
-    label[for="menu-toggle"] {
-        padding: 0 1rem;
-    }
-
-    nav {
-        height: 100%;
-         // hidden by default
-        width: 0px;
-        max-width: unquote("min(max(400px, 25vw), 50vw)");
-        transition: width 1s;
-
-        // ensure content is hidden
-        overflow: hidden;
-        overflow-wrap: break-word;
-    }
+    box-sizing: border-box;
 }
 
 .site-footer {
@@ -59,27 +19,13 @@ aside {
 }
 
 @media only screen and (max-width: 575px) {
-    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
-        // increase for menu toggle
-        position: fixed;
-    }
-    aside nav {
-        max-width: unquote("min(100vw, max(400px, 25vw))");
-    }
     main {
-        min-height: calc(100vh - 180px);
+        min-height: calc(100vh - 174px);
     }
 }
 
-@media only screen and (max-width: 500px) {
-    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
-        // increase for menu toggle
-        position: fixed;
-    }
-    aside nav {
-        max-width: unquote("min(100vw, max(400px, 25vw))");
-    }
+@media only screen and (max-width: 392px) {
     main {
-        min-height: calc(100vh - 174px);
+        min-height: calc(100vh - 244px);
     }
 }

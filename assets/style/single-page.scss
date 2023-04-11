@@ -1,0 +1,52 @@
+@import "single";
+
+aside {
+    position: fixed;
+    height: 100vh;
+    width: fit-content;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+    background-color: var(--section-dark-bg-color);
+    color: var(--section-dark-text-color);
+
+    #menu-toggle {
+        -webkit-appearance: none;
+        appearance: none;
+        display: none;
+    
+        &:checked ~ nav {
+            width: fit-content;
+
+            overflow-y: scroll;
+            overflow-x: clip;
+            padding-right: 2rem; // some spacing to the content
+        }
+    }
+    label[for="menu-toggle"] {
+        padding: 0 1rem;
+    }
+
+    nav {
+        height: 100%;
+         // hidden by default
+        width: 0px;
+        max-width: unquote("min(max(400px, 25vw), 50vw)");
+        transition: width 1s;
+
+        // ensure content is hidden
+        overflow: hidden;
+        overflow-wrap: break-word;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #menu-toggle:not(:checked) ~ label[for="menu-toggle"] {
+        // increase for menu toggle
+        position: fixed;
+    }
+    aside nav {
+        max-width: unquote("min(100vw, max(400px, 25vw))");
+    }
+}
