@@ -69,7 +69,7 @@
                 <div title="Spieleranzahl"><i class="fa fa-users"></i> {{ .Params.playersMin }} - {{ .Params.playersMax }}</div>
                 <div title="Spielzeit"><i class="fa fa-clock-o"></i> {{ .Params.playTime }} Min.</div>
                 <div title="Empfohlenes Alter"><i class="fa fa-birthday-cake"></i> {{ .Params.playerAge }}</div>
-                <div title="Komplexität"><i class="fa fa-book"></i> {{ index $complexityLevels (default 2 .Params.complexity) }}</div>
+                <div title="Komplexität"><i class="fa fa-book"></i> {{ index $complexityLevels ( cond (isset .Params "complexity") .Params.complexity 2 ) }}</div>
               </div>
               <p>
                 {{ .Summary | truncate 70 "…" }}
