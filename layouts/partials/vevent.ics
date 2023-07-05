@@ -8,7 +8,8 @@ LOCATION:{{ partial "escape-text.ics" .Params.location }}
 GEO:{{ . | replaceRE "[ ,;]+" ";" }}
 {{ end -}}
 {{ else -}}
-LOCATION:{{ partial "escape-text.ics" `St. Petersburger Str. 21
+LOCATION:{{ partial "escape-text.ics" `Club Aquarium e. V.
+St. Petersburger Str. 21
 01069 Dresden` }}
 GEO:51.0448464;13.7401122
 {{ end -}}
