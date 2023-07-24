@@ -10,7 +10,12 @@
 <div class="timeline-wrapper">
 	<div class="timeline-head">
 		<div>{{ .Params.date | time.Format ":date_medium"}}
-		{{if isset .Params "time"}} - {{ .Params.time }}{{end}}</div>
+		{{ if isset .Params "expirydate"}}
+			{{ if ge ((.Params.expiryDate | time).Sub (.Params.date | time)).Hours 24 }}
+			  - {{ .Params.expiryDate | time.Format ":date_medium" }}
+			{{end}}
+		{{ end }}
+		</div>
 	</div>
 	<div class="timeline-content">
 		<h5>{{ .Title }}</h5>
